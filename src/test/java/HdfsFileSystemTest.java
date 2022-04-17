@@ -68,7 +68,7 @@ public class HdfsFileSystemTest {
         assertTrue(test.downloadFile("/upload.txt", "download.txt", true));
 
         // exception
-        assertFalse(test.downloadFile("upload.txt", "download.txt", false));    // not found                              // not found
+        assertFalse(test.downloadFile("upload.txt", "download.txt", false));    // not found
         assertFalse(test.downloadFile("/upload.txt", "", false));               // not found
         assertFalse(test.downloadFile("", "download.txt", false));              // not found
         assertFalse(test.downloadFile("/upload.txt", "download.txt", false));   // exists
