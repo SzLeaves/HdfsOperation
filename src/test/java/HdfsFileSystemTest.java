@@ -3,18 +3,21 @@ import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.lang.reflect.Method;
+import java.net.URISyntaxException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class HdfsFileSystemTest {
-    private final HdfsFileSystem test = new HdfsFileSystem("hdfs://172.16.0.100:9000", "root");
-
     private static final int EXISTS = 1;
     private static final int NOCREATE = -1;
     private static final int NOEXISTS = 0;
+
+    private final String rootPath = "";
+    private final String user = "";
+    private final HdfsFileSystem test = new HdfsFileSystem(rootPath, user);
+
 
     public HdfsFileSystemTest() throws URISyntaxException, IOException, InterruptedException {
     }
@@ -86,7 +89,7 @@ public class HdfsFileSystemTest {
 
     @Test
     public void isFileExists() throws Exception {
-        // 反射调用private方法
+        // reflect invoke
         Method test_method = this.test.getClass().getDeclaredMethod("isPathExists", String.class);
         test_method.setAccessible(true);
 
