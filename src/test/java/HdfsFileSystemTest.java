@@ -14,8 +14,8 @@ public class HdfsFileSystemTest {
     private static final int NOCREATE = -1;
     private static final int NOEXISTS = 0;
 
-    private final String rootPath = "";
-    private final String user = "";
+    private final String rootPath = "hdfs://localhost:9000";
+    private final String user = "root";
     private final HdfsFileSystem test = new HdfsFileSystem(rootPath, user);
 
 
