@@ -143,12 +143,12 @@ public class HdfsFileSystem {
         }
     }
 
-    public void viewTextFile(String file_path) throws FileNotFoundException {
-        int status = isPathExists(file_path);
+    public void viewTextFile(String filePath) throws FileNotFoundException {
+        int status = isPathExists(filePath);
 
         if (status == EXISTS) {
             try {
-                FSDataInputStream fileInput = this.rootFs.open(new Path(file_path));
+                FSDataInputStream fileInput = this.rootFs.open(new Path(filePath));
                 IOUtils.copyBytes(fileInput, System.out, 1024);
             } catch (IOException e) {
                 e.printStackTrace();
