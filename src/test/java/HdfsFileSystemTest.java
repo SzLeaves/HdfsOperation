@@ -1,3 +1,5 @@
+import io.szleaves.hadoop.HdfsFileSystem;
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileAlreadyExistsException;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +19,6 @@ public class HdfsFileSystemTest {
     private final String rootPath = "hdfs://localhost:9000";
     private final String user = "root";
     private final HdfsFileSystem test = new HdfsFileSystem(rootPath, user);
-
 
     public HdfsFileSystemTest() throws URISyntaxException, IOException, InterruptedException {
     }

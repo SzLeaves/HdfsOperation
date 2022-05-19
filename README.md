@@ -3,6 +3,6 @@
 <dependency>
   <groupId>io.github.szleaves.hadoop</groupId>
   <artifactId>hdfs-operation</artifactId>
-  <version>1.2</version>
+  <version>1.2.2</version>
 </dependency>
 ```

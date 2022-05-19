@@ -1,3 +1,5 @@
+package io.szleaves.hadoop;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.IOUtils;
@@ -21,6 +23,12 @@ public class HdfsFileSystem {
         this.rootPath = rootPath;
         this.user = user;
         this.rootFs = FileSystem.get(new URI(rootPath), new Configuration(), user);
+    }
+
+    public HdfsFileSystem(String rootPath, String user, Configuration conf) throws URISyntaxException, IOException, InterruptedException {
+        this.rootPath = rootPath;
+        this.user = user;
+        this.rootFs = FileSystem.get(new URI(rootPath), conf, user);
     }
 
     public boolean createDir(String path) throws FileNotFoundException, FileAlreadyExistsException {
